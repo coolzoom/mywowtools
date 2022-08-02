@@ -45,7 +45,7 @@ namespace StormLib
         public static extern bool SFileExtractFile(
             IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
-            [MarshalAs(UnmanagedType.LPStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.LPWStr)] string szExtracted,
             [MarshalAs(UnmanagedType.U4)] OpenFile dwSearchScope);
 
         [DllImport("StormLib.dll")]
