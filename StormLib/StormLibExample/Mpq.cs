@@ -15,16 +15,19 @@ namespace Test
                     "enGB\\locale-enGB.MPQ" };
 
         static readonly MpqArchiveSet archive = new MpqArchiveSet();
-        static readonly string regGameDir = MpqArchiveSet.GetGameDirFromReg();
+        //static readonly string regGameDir = MpqArchiveSet.GetGameDirFromReg();
 
         static Mpq()
         {
-            var dir = Path.Combine(regGameDir, "Data\\");
-            archive.SetGameDir(dir);
+            //var dir = Path.Combine(regGameDir, "Data\\");
+            //archive.SetGameDir(dir);
 
-            Console.WriteLine("Game dir is {0}", dir);
+            //Console.WriteLine("Game dir is {0}", dir);
 
-            archive.AddArchives(archiveNames);
+
+            //archive.AddArchives(archiveNames);
+
+            archive.AddArchive("F:\\WOWServer\\Source\\WowClassicGrindBot-Sync\\Json\\MPQ\\common-2.MPQ");
         }
 
         public static bool ExtractFile(string from, string to, OpenFile dwSearchScope)

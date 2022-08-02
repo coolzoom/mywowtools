@@ -59,29 +59,29 @@ namespace StormLib
     public class MpqArchiveSet : IDisposable
     {
         private List<MpqArchive> archives = new List<MpqArchive>();
-        private string GameDir = ".\\";
+        //private string GameDir = ".\\";
 
-        public void SetGameDir(string dir)
-        {
-            GameDir = dir;
-        }
+        //public void SetGameDir(string dir)
+        //{
+        //    GameDir = dir;
+        //}
 
-        public static string GetGameDirFromReg()
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Blizzard Entertainment\\World of Warcraft");
-            if (key == null)
-                return null;
-            Object val = key.GetValue("InstallPath");
-            if (val == null)
-                return null;
-            return val.ToString();
-        }
+        //public static string GetGameDirFromReg()
+        //{
+        //    RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Blizzard Entertainment\\World of Warcraft");
+        //    if (key == null)
+        //        return null;
+        //    Object val = key.GetValue("InstallPath");
+        //    if (val == null)
+        //        return null;
+        //    return val.ToString();
+        //}
 
         public bool AddArchive(string file)
         {
             Console.WriteLine("Adding archive: {0}", file);
 
-            MpqArchive a = new MpqArchive(GameDir + file, 0, OpenArchiveFlags.READ_ONLY);
+            MpqArchive a = new MpqArchive(file, 0, OpenArchiveFlags.READ_ONLY);
             if (a.IsOpen)
             {
                 archives.Add(a);
@@ -165,44 +165,44 @@ namespace StormLib
         private bool Open(string file, uint Prio, OpenArchiveFlags Flags)
         {
             bool r = StormLib.SFileOpenArchive(file, Prio, Flags, out handle);
-            if (r)
-                OpenPatch(file);
+            //if (r)
+            //    OpenPatch(file);
             return r;
         }
 
-        private void OpenPatch(string file)
-        {
-            var gamedir = MpqArchiveSet.GetGameDirFromReg();
+        //private void OpenPatch(string file)
+        //{
+        //    var gamedir = MpqArchiveSet.GetGameDirFromReg();
 
-            var patches = Directory.GetFiles(gamedir, "Data\\wow-update-*.mpq").ToList();
+        //    var patches = Directory.GetFiles(gamedir, "Data\\wow-update-*.mpq").ToList();
 
-            var prefix = MpqLocale.GetPrefix(file);
+        //    var prefix = MpqLocale.GetPrefix(file);
 
-            if (prefix != "base")
-            {
-                patches.RemoveAll(s => s.Contains("base"));
+        //    if (prefix != "base")
+        //    {
+        //        patches.RemoveAll(s => s.Contains("base"));
 
-                var localePatches = Directory.GetFiles(gamedir, String.Format("Data\\{0}\\wow-update-*.mpq", prefix));
+        //        var localePatches = Directory.GetFiles(gamedir, String.Format("Data\\{0}\\wow-update-*.mpq", prefix));
 
-                patches.AddRange(localePatches);
-            }
+        //        patches.AddRange(localePatches);
+        //    }
 
-            foreach (var patch in patches)
-            {
-                prefix = MpqLocale.GetPrefix(file);
-                var pref = MpqLocale.GetPrefixForPatch(patch);
+        //    foreach (var patch in patches)
+        //    {
+        //        prefix = MpqLocale.GetPrefix(file);
+        //        var pref = MpqLocale.GetPrefixForPatch(patch);
 
-                if (pref != "locale")
-                    prefix = String.Empty;
+        //        if (pref != "locale")
+        //            prefix = String.Empty;
 
-                Console.WriteLine("Adding patch: {0} with prefix {1}", Path.GetFileName(patch), prefix != String.Empty ? "\"" + prefix + "\"" : "\"\"");
-                bool r = StormLib.SFileOpenPatchArchive(handle, patch, prefix, 0);
-                if (!r)
-                    Console.WriteLine("Failed to add patch: {0}", Path.GetFileName(patch));
-                else
-                    Console.WriteLine("Added patch: {0}", Path.GetFileName(patch));
-            }
-        }
+        //        Console.WriteLine("Adding patch: {0} with prefix {1}", Path.GetFileName(patch), prefix != String.Empty ? "\"" + prefix + "\"" : "\"\"");
+        //        bool r = StormLib.SFileOpenPatchArchive(handle, patch, prefix, 0);
+        //        if (!r)
+        //            Console.WriteLine("Failed to add patch: {0}", Path.GetFileName(patch));
+        //        else
+        //            Console.WriteLine("Added patch: {0}", Path.GetFileName(patch));
+        //    }
+        //}
 
         public void Dispose()
         {
