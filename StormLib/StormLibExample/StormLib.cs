@@ -33,7 +33,7 @@ namespace StormLib
     {
         [DllImport("StormLib.dll")]
         public static extern bool SFileOpenArchive(
-            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPWStr)] string szMpqName,
             uint dwPriority,
             [MarshalAs(UnmanagedType.U4)] OpenArchiveFlags dwFlags,
             out IntPtr phMpq);
@@ -54,6 +54,10 @@ namespace StormLib
             [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
             uint dwFlags);
+
+        [DllImport("StormLib.dll")]
+        public static extern bool SFileHasFile(IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName);
     }
 
     public class MpqArchiveSet : IDisposable
@@ -76,6 +80,16 @@ namespace StormLib
         //        return null;
         //    return val.ToString();
         //}
+        public bool HasFile(string file)
+        {
+            foreach (MpqArchive a in archives)
+            {
+                var r = a.HasFile(file);
+                if (r)
+                    return true;
+            }
+            return false;
+        }
 
         public bool AddArchive(string file)
         {
@@ -226,5 +240,11 @@ namespace StormLib
 
             return StormLib.SFileExtractFile(handle, from, to, dwSearchScope);
         }
+
+        public bool HasFile(string file)
+        {
+            return StormLib.SFileHasFile(handle, file);
+        }
+
     }
 }

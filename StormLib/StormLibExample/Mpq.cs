@@ -28,6 +28,8 @@ namespace Test
             //archive.AddArchives(archiveNames);
 
             archive.AddArchive("F:\\WOWServer\\Source\\WowClassicGrindBot-Sync\\Json\\MPQ\\common-2.MPQ");
+            archive.HasFile("World\\Maps\\Azeroth\\Azeroth.wdt");
+            archive.ExtractFile("World\\Maps\\Azeroth\\Azeroth.wdt", "F:\\Azeroth.wdt", OpenFile.FROM_MPQ);
         }
 
         public static bool ExtractFile(string from, string to, OpenFile dwSearchScope)
