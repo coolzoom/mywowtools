@@ -28,15 +28,17 @@ namespace Test
             //archive.AddArchives(archiveNames);
 
             //archive.AddArchive("F:\\WOWServer\\Source\\WowClassicGrindBot-Sync\\Json\\MPQ\\common-2.MPQ");
-            archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
+            //archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
             archive.AddArchive("G:\\client_3.3.5\\common-2.MPQ");
             archive.AddArchive("G:\\client_3.3.5\\expansion.MPQ");
-            //archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
+            archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
             bool hasaz = archive.HasFile("World\\Maps\\Azeroth\\Azeroth.wdt");
             archive.ExtractFile("World\\Maps\\Azeroth\\Azeroth.wdt", "F:\\Azeroth.wdt", OpenFile.SFILE_OPEN_FROM_MPQ);
             //World\maps\Northrend\Northrend.wdt
             bool haswlk = archive.HasFile("World\\Maps\\Northrend\\Northrend.wdt");
             bool wlksuccess = archive.ExtractFile("World\\Maps\\Northrend\\Northrend.wdt", "F:\\0.tmp", OpenFile.SFILE_OPEN_FROM_MPQ);
+
+            
         }
 
         public static bool ExtractFile(string from, string to, OpenFile dwSearchScope)

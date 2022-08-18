@@ -1,9 +1,12 @@
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+
+
 
 namespace StormLib
 {
@@ -86,75 +89,141 @@ namespace StormLib
     //        [MarshalAs(UnmanagedType.LPStr)] string szFileName);
     //}
 
-    internal unsafe class StormDllx64
+    internal unsafe class StormDllx642013
     {
 
-        [DllImport("MPQ\\StormLib_x64.dll")]
+        [DllImport("MPQ\\StormLib_x642013.dll")]
         public static extern bool SFileOpenArchive(
-            [MarshalAs(UnmanagedType.LPWStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             uint dwPriority,
             [MarshalAs(UnmanagedType.U4)] OpenArchiveFlags dwFlags,
             out IntPtr phMpq);
 
-        [DllImport("MPQ\\StormLib_x64.dll")]
+        [DllImport("MPQ\\StormLib_x642013.dll")]
         public static extern bool SFileCloseArchive(IntPtr hMpq);
 
-        [DllImport("MPQ\\StormLib_x64.dll")]
+        [DllImport("MPQ\\StormLib_x642013.dll")]
         public static extern bool SFileExtractFile(
             IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
-            [MarshalAs(UnmanagedType.LPWStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.LPStr)] string szExtracted,
             [MarshalAs(UnmanagedType.U4)] OpenFile dwSearchScope);
 
-        [DllImport("MPQ\\StormLib_x64.dll")]
+        [DllImport("MPQ\\StormLib_x642013.dll")]
         public static extern bool SFileOpenPatchArchive(
             IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
             uint dwFlags);
 
-        [DllImport("MPQ\\StormLib_x64.dll")]
+        [DllImport("MPQ\\StormLib_x642013.dll")]
         public static extern bool SFileHasFile(IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szFileName);
 
     }
 
-    internal unsafe class StormDllx86
+    internal unsafe class StormDllx862013
     {
 
-        [DllImport("MPQ\\StormLib_x86.dll")]
+        [DllImport("MPQ\\StormLib_x862013.dll")]
         public static extern bool SFileOpenArchive(
-            [MarshalAs(UnmanagedType.LPWStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             uint dwPriority,
             [MarshalAs(UnmanagedType.U4)] OpenArchiveFlags dwFlags,
             out IntPtr phMpq);
 
-        [DllImport("MPQ\\StormLib_x86.dll")]
+        [DllImport("MPQ\\StormLib_x862013.dll")]
         public static extern bool SFileCloseArchive(IntPtr hMpq);
 
-        [DllImport("MPQ\\StormLib_x86.dll")]
+        [DllImport("MPQ\\StormLib_x862013.dll")]
         public static extern bool SFileExtractFile(
             IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
-            [MarshalAs(UnmanagedType.LPWStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.LPStr)] string szExtracted,
             [MarshalAs(UnmanagedType.U4)] OpenFile dwSearchScope);
 
-        [DllImport("MPQ\\StormLib_x86.dll")]
+        [DllImport("MPQ\\StormLib_x862013.dll")]
         public static extern bool SFileOpenPatchArchive(
             IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
             uint dwFlags);
 
-        [DllImport("MPQ\\StormLib_x86.dll")]
+        [DllImport("MPQ\\StormLib_x862013.dll")]
         public static extern bool SFileHasFile(IntPtr hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szFileName);
 
     }
 
+    internal unsafe class StormDllx642022
+    {
+
+        [DllImport("MPQ\\StormLib_x642022r_mb.dll")]
+        public static extern bool SFileOpenArchive(
+            [MarshalAs(UnmanagedType.LPWStr)] string szMpqName,
+            uint dwPriority,
+            [MarshalAs(UnmanagedType.U4)] OpenArchiveFlags dwFlags,
+            out IntPtr phMpq);
+
+        [DllImport("MPQ\\StormLib_x642022r_mb.dll")]
+        public static extern bool SFileCloseArchive(IntPtr hMpq);
+
+        [DllImport("MPQ\\StormLib_x642022r_mb.dll")]
+        public static extern bool SFileExtractFile(
+            IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
+            [MarshalAs(UnmanagedType.LPWStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.U4)] OpenFile dwSearchScope);
+
+        [DllImport("MPQ\\StormLib_x642022r_mb.dll")]
+        public static extern bool SFileOpenPatchArchive(
+            IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
+            uint dwFlags);
+
+        [DllImport("MPQ\\StormLib_x642022r_mb.dll")]
+        public static extern bool SFileHasFile(IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName);
+
+    }
+
+    internal unsafe class StormDllx862022
+    {
+
+        [DllImport("MPQ\\StormLib_x862022r_mb.dll")]
+        public static extern bool SFileOpenArchive(
+            [MarshalAs(UnmanagedType.LPWStr)] string szMpqName,
+            uint dwPriority,
+            [MarshalAs(UnmanagedType.U4)] OpenArchiveFlags dwFlags,
+            out IntPtr phMpq);
+
+        [DllImport("MPQ\\StormLib_x862022r_mb.dll")]
+        public static extern bool SFileCloseArchive(IntPtr hMpq);
+
+        [DllImport("MPQ\\StormLib_x862022r_mb.dll")]
+        public static extern bool SFileExtractFile(
+            IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
+            [MarshalAs(UnmanagedType.LPWStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.U4)] OpenFile dwSearchScope);
+
+        [DllImport("MPQ\\StormLib_x862022r_mb.dll")]
+        public static extern bool SFileOpenPatchArchive(
+            IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
+            uint dwFlags);
+
+        [DllImport("MPQ\\StormLib_x862022r_mb.dll")]
+        public static extern bool SFileHasFile(IntPtr hMpq,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName);
+
+    }
 
     public class MpqArchiveSet : IDisposable
     {
+        
         private List<MpqArchive> archives = new List<MpqArchive>();
         //private string GameDir = ".\\";
 
@@ -217,6 +286,9 @@ namespace StormLib
             foreach (MpqArchive a in archives)
             {
                 var r = a.ExtractFile(from, to, dwSearchScope);
+                //stormlib2022unicode could not extract Northrend.wdt, have to do exact for every archive and do not return 
+                //stormlib2013mb can do extract for northrend
+
                 if (r)
                     return true;
             }
@@ -264,6 +336,8 @@ namespace StormLib
 
     public class MpqArchive : IDisposable
     {
+        private bool USING_OLD_STORMLIB = false;
+
         private IntPtr handle = IntPtr.Zero;
 
         public MpqArchive(string file, uint Prio, OpenArchiveFlags Flags)
@@ -275,9 +349,20 @@ namespace StormLib
 
         private bool Open(string file, uint Prio, OpenArchiveFlags Flags)
         {
-            bool r = Environment.Is64BitProcess
-    ? StormDllx64.SFileOpenArchive(file, Prio, Flags, out handle)
-    : StormDllx86.SFileOpenArchive(file, Prio, Flags, out handle);
+            bool r;
+            if (USING_OLD_STORMLIB)
+            {
+                r = Environment.Is64BitProcess
+                        ? StormDllx642013.SFileOpenArchive(file, Prio, Flags, out handle)
+                        : StormDllx642013.SFileOpenArchive(file, Prio, Flags, out handle);
+            }
+            else
+            {
+                r = Environment.Is64BitProcess
+                        ? StormDllx642022.SFileOpenArchive(file, Prio, Flags, out handle)
+                        : StormDllx642022.SFileOpenArchive(file, Prio, Flags, out handle);
+            }
+
 
             //if (r)
             //    OpenPatch(file);
@@ -325,9 +410,20 @@ namespace StormLib
 
         public bool Close()
         {
-            bool r = Environment.Is64BitProcess
-                ? StormDllx64.SFileCloseArchive(handle)
-                : StormDllx86.SFileCloseArchive(handle);
+            bool r;
+            if (USING_OLD_STORMLIB)
+            {
+                r = Environment.Is64BitProcess
+                                ? StormDllx642013.SFileCloseArchive(handle)
+                                : StormDllx642013.SFileCloseArchive(handle);
+            }
+            else
+            {
+                r = Environment.Is64BitProcess
+                                ? StormDllx642022.SFileCloseArchive(handle)
+                                : StormDllx642022.SFileCloseArchive(handle);
+            }
+
             if (r)
                 handle = IntPtr.Zero;
             return r;
@@ -340,16 +436,39 @@ namespace StormLib
             if (!Directory.Exists(dir) && !String.IsNullOrEmpty(dir))
                 Directory.CreateDirectory(dir);
 
-            return Environment.Is64BitProcess
-                ? StormDllx64.SFileExtractFile(handle, from, to, dwSearchScope)
-                : StormDllx86.SFileExtractFile(handle, from, to, dwSearchScope);
+            bool r;
+            if (USING_OLD_STORMLIB)
+            {
+                r = Environment.Is64BitProcess
+                ? StormDllx642013.SFileExtractFile(handle, from, to, dwSearchScope)
+                : StormDllx642013.SFileExtractFile(handle, from, to, dwSearchScope);
+            }
+            else
+            {
+                r = Environment.Is64BitProcess
+                ? StormDllx642022.SFileExtractFile(handle, from, to, dwSearchScope)
+                : StormDllx642022.SFileExtractFile(handle, from, to, dwSearchScope);
+            }
+            return r;
         }
 
         public bool HasFile(string file)
         {
-            return Environment.Is64BitProcess
-                ? StormDllx64.SFileHasFile(handle, file)
-                : StormDllx86.SFileHasFile(handle, file);
+            bool r;
+            if (USING_OLD_STORMLIB)
+            {
+                r = Environment.Is64BitProcess
+                ? StormDllx642013.SFileHasFile(handle, file)
+                : StormDllx642013.SFileHasFile(handle, file);
+            }
+            else
+            {
+                r = Environment.Is64BitProcess
+                ? StormDllx642022.SFileHasFile(handle, file)
+                : StormDllx642022.SFileHasFile(handle, file);
+            }
+            return r;
+
         }
 
     }
