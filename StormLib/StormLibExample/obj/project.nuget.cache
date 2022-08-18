@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0vZvo0E5IXIHrGtr/9F9HF+1DQhfz8zK31/K8K6+PrUQXqZYeI45B61Hvd5IbjNVz9MgYq6mlzk9rEvT/IfIDQ==",
+  "success": true,
+  "projectFilePath": "F:\\WOWServer\\Source\\mywowtools\\StormLib\\StormLibExample\\StormLibExample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
