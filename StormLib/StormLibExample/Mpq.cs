@@ -29,7 +29,6 @@ namespace Test
 
             //archive.AddArchive("F:\\WOWServer\\Source\\WowClassicGrindBot-Sync\\Json\\MPQ\\common-2.MPQ");
             archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
-            archive.AddArchive("G:\\client_3.3.5\\common.MPQ");
             archive.AddArchive("G:\\client_3.3.5\\common-2.MPQ");
             archive.AddArchive("G:\\client_3.3.5\\expansion.MPQ");
             //archive.AddArchive("G:\\client_3.3.5\\lichking.MPQ");
