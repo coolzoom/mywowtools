@@ -38,7 +38,8 @@ namespace Test
             bool haswlk = archive.HasFile("World\\Maps\\Northrend\\Northrend.wdt");
             bool wlksuccess = archive.ExtractFile("World\\Maps\\Northrend\\Northrend.wdt", "F:\\0.tmp", OpenFile.SFILE_OPEN_FROM_MPQ);
 
-            
+            //maybe becuase of this?
+			//https://github.com/ladislav-zezula/StormLib/issues/221
         }
 
         public static bool ExtractFile(string from, string to, OpenFile dwSearchScope)
