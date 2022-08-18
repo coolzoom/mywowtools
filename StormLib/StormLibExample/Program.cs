@@ -8,8 +8,8 @@ namespace StormLibExample
     {
         static void Main(string[] args)
         {
-            Mpq.ExtractFile("DBFilesClient\\Item-sparse.db2", "Item-sparse.db2", OpenFile.PATCHED_FILE);
-            Mpq.ExtractFile("DBFilesClient\\ItemCurrencyCost.db2", "ItemCurrencyCost.db2", OpenFile.PATCHED_FILE);
+            Mpq.ExtractFile("DBFilesClient\\Item-sparse.db2", "Item-sparse.db2", OpenFile.SFILE_OPEN_FROM_MPQ);
+            Mpq.ExtractFile("DBFilesClient\\ItemCurrencyCost.db2", "ItemCurrencyCost.db2", OpenFile.SFILE_OPEN_FROM_MPQ);
             
             Mpq.Close();
 
